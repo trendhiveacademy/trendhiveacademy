@@ -22,11 +22,34 @@
             z-index: -1;
         }
         header {
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             color: white;
             padding: 20px;
             background: rgba(0, 0, 0, 0.6);
             width: 100%;
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+        .cart-icon {
+            width: 40px;
+            cursor: pointer;
+        }
+        .cart-container {
+            position: relative;
+        }
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: red;
+            color: white;
+            font-size: 14px;
+            border-radius: 50%;
+            padding: 5px 10px;
         }
         .courses {
             display: flex;
@@ -63,31 +86,6 @@
         button:hover {
             background-color: #0056b3;
         }
-        .cart {
-            text-align: center;
-            margin-top: 20px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            width: 80%;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .cart-items {
-            list-style: none;
-            padding: 0;
-        }
-        .cart-items li {
-            display: flex;
-            justify-content: space-between;
-            background: white;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        }
         @media (max-width: 768px) {
             .courses {
                 flex-direction: column;
@@ -106,8 +104,12 @@
     </video>
     
     <header>
-        <h1>Welcome to Trend Hive Academy</h1>
-        <p>Buy Premium Courses & Learn from Experts</p>
+        <img src="logo.png" alt="Logo" class="logo">
+        <h1>Trend Hive Academy</h1>
+        <div class="cart-container">
+            <img src="cart-icon.png" alt="Cart" class="cart-icon" onclick="toggleCart()">
+            <span class="cart-badge" id="cart-count">0</span>
+        </div>
     </header>
     
     <section class="courses">
@@ -139,12 +141,6 @@
         </div>
     </section>
     
-    <div class="cart">
-        <h2>Shopping Cart</h2>
-        <ul id="cart-items" class="cart-items"></ul>
-        <button onclick="checkout()">Proceed to Checkout</button>
-    </div>
-    
     <script>
         let cart = [];
 
@@ -154,13 +150,7 @@
         }
 
         function updateCart() {
-            let cartList = document.getElementById("cart-items");
-            cartList.innerHTML = "";
-            cart.forEach((item, index) => {
-                let li = document.createElement("li");
-                li.textContent = item;
-                cartList.appendChild(li);
-            });
+            document.getElementById("cart-count").textContent = cart.length;
         }
 
         function buyNow(courseName) {
@@ -168,13 +158,8 @@
             // Integrate payment gateway
         }
 
-        function checkout() {
-            if (cart.length === 0) {
-                alert("Your cart is empty!");
-                return;
-            }
-            alert("Proceeding to payment for: " + cart.join(", "));
-            // Integrate payment gateway
+        function toggleCart() {
+            alert("Cart contains: " + cart.join(", "));
         }
     </script>
 </body>
