@@ -5,8 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trend Hive Academy - Courses</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        header {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.6);
+        }
+        .courses {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+        }
+        .course {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 <body>
+    <video autoplay muted loop class="video-bg">
+        <source src="x.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
     <header>
         <h1>Welcome to Trend Hive Academy</h1>
         <p>Buy Premium Courses & Learn from Experts</p>
