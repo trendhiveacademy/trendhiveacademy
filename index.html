@@ -3,15 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure Video Streaming</title>
+    <title>Trend Hive Academy - Courses</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>My Secure Video</h1>
-
-    <iframe src="https://player.vdocipher.com/v2/?otp=20160313versASE323Yjx88d6OwvRO8i2k2ZcK6ar2TVHEOROIMusuHrb9xYzPUe&playbackInfo=eyJ2aWRlb0lkIjoiNmM1NmI5MGJjNzc0NDMxY2JkNGI5MTk0NmEwZWU4Y2QifQ==" 
-        style="border:0;height:360px;width:640px;max-width:100%" 
-        allowFullScreen="true" allow="encrypted-media">
-    </iframe>
-
+    <header>
+        <h1>Welcome to Trend Hive Academy</h1>
+        <p>Buy Premium Courses & Learn from Experts</p>
+    </header>
+    
+    <section class="courses">
+        <div class="course">
+            <h2>B1 Course</h2>
+            <p>Learn the fundamentals in this comprehensive course.</p>
+            <button onclick="buyCourse('B1 Course')">Buy Now</button>
+        </div>
+        
+        <div class="course">
+            <h2>P2 Course</h2>
+            <p>Advanced concepts and practical knowledge.</p>
+            <button onclick="buyCourse('P2 Course')">Buy Now</button>
+        </div>
+        
+        <div class="course">
+            <h2>E3 Course</h2>
+            <p>Masterclass for professionals.</p>
+            <button onclick="buyCourse('E3 Course')">Buy Now</button>
+        </div>
+    </section>
+    
+    <script>
+        function buyCourse(courseName) {
+            alert('You selected ' + courseName + '. Payment integration coming soon!');
+        }
+    </script>
 </body>
 </html>
