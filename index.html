@@ -34,17 +34,19 @@
             width: 100px;
             height: auto;
         }
+        .cart-container {
+            position: relative;
+            margin-right: 30px; /* Move cart icon slightly left */
+        }
         .cart-icon {
             width: 40px;
             cursor: pointer;
-        }
-        .cart-container {
-            position: relative;
+            filter: brightness(0) invert(1); /* Make cart icon white */
         }
         .cart-badge {
             position: absolute;
             top: -5px;
-            right: 0px;
+            right: -5px;
             background: red;
             color: white;
             font-size: 14px;
