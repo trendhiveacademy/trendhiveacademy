@@ -58,6 +58,18 @@
         button:hover {
             background-color: #0056b3;
         }
+        .cart {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            width: 80%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
         @media (max-width: 768px) {
             header {
                 font-size: 16px;
@@ -75,7 +87,7 @@
 </head>
 <body>
     <video autoplay muted loop class="video-bg">
-        <source src="x.mp4" type="video/mp4">
+        <source src="y.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     
@@ -88,25 +100,53 @@
         <div class="course">
             <h2>B1 Course</h2>
             <p>Learn the fundamentals in this comprehensive course.</p>
-            <button onclick="buyCourse('B1 Course')">Buy Now</button>
+            <button onclick="addToCart('B1 Course')">Add to Cart</button>
         </div>
         
         <div class="course">
             <h2>P2 Course</h2>
             <p>Advanced concepts and practical knowledge.</p>
-            <button onclick="buyCourse('P2 Course')">Buy Now</button>
+            <button onclick="addToCart('P2 Course')">Add to Cart</button>
         </div>
         
         <div class="course">
             <h2>E3 Course</h2>
             <p>Masterclass for professionals.</p>
-            <button onclick="buyCourse('E3 Course')">Buy Now</button>
+            <button onclick="addToCart('E3 Course')">Add to Cart</button>
         </div>
     </section>
     
+    <div class="cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items"></ul>
+        <button onclick="checkout()">Proceed to Checkout</button>
+    </div>
+    
     <script>
-        function buyCourse(courseName) {
-            alert('You selected ' + courseName + '. Payment integration coming soon!');
+        let cart = [];
+
+        function addToCart(courseName) {
+            cart.push(courseName);
+            updateCart();
+        }
+
+        function updateCart() {
+            let cartList = document.getElementById("cart-items");
+            cartList.innerHTML = "";
+            cart.forEach((item, index) => {
+                let li = document.createElement("li");
+                li.textContent = item;
+                cartList.appendChild(li);
+            });
+        }
+
+        function checkout() {
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }
+            alert("Proceeding to payment for: " + cart.join(", "));
+            // Integrate payment gateway here
         }
     </script>
 </body>
