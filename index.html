@@ -43,12 +43,12 @@
         }
         .cart-container {
             position: relative;
-            margin-right: 30px; /* Move cart icon slightly left */
+            margin-right: 30px;
         }
         .cart-icon {
             width: 40px;
             cursor: pointer;
-            filter: brightness(0) invert(1); /* Make cart icon white */
+            filter: brightness(0) invert(1);
         }
         .cart-badge {
             position: absolute;
@@ -80,7 +80,8 @@
         }
         .buttons {
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
             gap: 10px;
             margin-top: 10px;
         }
@@ -127,7 +128,9 @@
             <p>Write here about it...</p>
             <div class="buttons">
                 <button onclick="addToCart('Bank Logs')">Add to Cart</button>
-                <button onclick="buyNow('Bank Logs')">Buy Now</button>
+                <a href="https://nowpayments.io/payment/?iid=6110280588&source=button" target="_blank" rel="noreferrer noopener">
+                    <img src="https://nowpayments.io/images/embeds/payment-button-white.svg" alt="Buy Now">
+                </a>
             </div>
         </div>
         
@@ -136,7 +139,9 @@
             <p>Write here about it...</p>
             <div class="buttons">
                 <button onclick="addToCart('Paypal Logs')">Add to Cart</button>
-                <button onclick="buyNow('Paypal Logs')">Buy Now</button>
+                <a href="https://nowpayments.io/payment/?iid=6110280588&source=button" target="_blank" rel="noreferrer noopener">
+                    <img src="https://nowpayments.io/images/embeds/payment-button-white.svg" alt="Buy Now">
+                </a>
             </div>
         </div>
         
@@ -145,7 +150,9 @@
             <p>Write here about it...</p>
             <div class="buttons">
                 <button onclick="addToCart('Enroll')">Add to Cart</button>
-                <button onclick="buyNow('Enroll')">Buy Now</button>
+                <a href="https://nowpayments.io/payment/?iid=6110280588&source=button" target="_blank" rel="noreferrer noopener">
+                    <img src="https://nowpayments.io/images/embeds/payment-button-white.svg" alt="Buy Now">
+                </a>
             </div>
         </div>
     </section>
@@ -160,11 +167,6 @@
 
         function updateCart() {
             document.getElementById("cart-count").textContent = cart.length;
-        }
-
-        function buyNow(courseName) {
-            alert("Redirecting to payment for: " + courseName);
-            // Integrate payment gateway
         }
 
         function toggleCart() {
