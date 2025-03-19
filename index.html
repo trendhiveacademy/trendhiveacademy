@@ -44,7 +44,7 @@
         }
         .cart-container {
             position: relative;
-            margin-right: 80px;
+            margin-right: 40px;
         }
         .cart-icon {
             width: 40px;
@@ -125,21 +125,30 @@
     
     <section class="courses">
         <div class="course">
-            <h2>Bank Logs</h2>
-            <p>Write here about it...</p>
-            <button onclick="addToCart('Bank Logs')">Add to Cart</button>
+            <h2>B1 Course</h2>
+            <p>Price: $80</p>
+            <button onclick="addToCart('B1 Course', 80)">Add to Cart</button>
+            <a href="https://nowpayments.io/payment/?iid=6110280588&source=button" target="_blank" rel="noreferrer noopener">
+                <img src="https://nowpayments.io/images/embeds/payment-button-black.svg" alt="Crypto payment button by NOWPayments">
+            </a>
         </div>
         
         <div class="course">
-            <h2>Paypal Logs</h2>
-            <p>Write here about it...</p>
-            <button onclick="addToCart('Paypal Logs')">Add to Cart</button>
+            <h2>P2 Course</h2>
+            <p>Price: $80</p>
+            <button onclick="addToCart('P2 Course', 80)">Add to Cart</button>
+            <a href="https://nowpayments.io/payment/?iid=6110280588&source=button" target="_blank" rel="noreferrer noopener">
+                <img src="https://nowpayments.io/images/embeds/payment-button-black.svg" alt="Crypto payment button by NOWPayments">
+            </a>
         </div>
         
         <div class="course">
-            <h2>Enroll</h2>
-            <p>Write here about it...</p>
-            <button onclick="addToCart('Enroll')">Add to Cart</button>
+            <h2>E3 Course</h2>
+            <p>Price: $150</p>
+            <button onclick="addToCart('E3 Course', 150)">Add to Cart</button>
+            <a href="https://nowpayments.io/payment/?iid=5116156768&source=button" target="_blank" rel="noreferrer noopener">
+                <img src="https://nowpayments.io/images/embeds/payment-button-black.svg" alt="Crypto payment button by NOWPayments">
+            </a>
         </div>
     </section>
     
@@ -150,8 +159,8 @@
     <script>
         let cart = [];
 
-        function addToCart(courseName) {
-            cart.push(courseName);
+        function addToCart(courseName, price) {
+            cart.push({ name: courseName, price: price });
             updateCart();
         }
 
@@ -160,7 +169,8 @@
         }
 
         function toggleCart() {
-            alert("Cart contains: " + cart.join(", "));
+            let cartSummary = cart.map(item => `${item.name}: $${item.price}`).join("\n");
+            alert("Cart contains:\n" + cartSummary);
         }
 
         function checkout() {
