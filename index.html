@@ -25,7 +25,7 @@
         }
         header {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             color: white;
             padding: 20px;
@@ -41,25 +41,6 @@
             font-weight: 600;
             letter-spacing: 1px;
             font-family: 'Poppins', sans-serif;
-        }
-        .cart-container {
-            position: relative;
-            margin-right: 40px;
-        }
-        .cart-icon {
-            width: 40px;
-            cursor: pointer;
-            filter: brightness(0) invert(1);
-        }
-        .cart-badge {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background: red;
-            color: white;
-            font-size: 14px;
-            border-radius: 50%;
-            padding: 5px 10px;
         }
         .courses {
             display: flex;
@@ -78,24 +59,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             width: 90%;
             max-width: 300px;
-        }
-        .buttons {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        button:hover {
-            background-color: #0056b3;
         }
         @media (max-width: 768px) {
             .courses {
@@ -117,72 +80,32 @@
     <header>
         <img src="THA.jpg" alt="Logo" class="logo">
         <h1 class="site-title">Trend Hive Academy</h1>
-        <div class="cart-container">
-            <img src="a.png" alt="Cart" class="cart-icon" onclick="toggleCart()">
-            <span class="cart-badge" id="cart-count">0</span>
-        </div>
     </header>
     
     <section class="courses">
         <div class="course">
-            <h2>B1 Course</h2>
+            <h2>Bank Logs</h2>
             <p>Price: $80</p>
-            <button onclick="addToCart('B1 Course', 80)">Add to Cart</button>
             <a href="https://nowpayments.io/payment/?iid=6110280588&source=button" target="_blank" rel="noreferrer noopener">
                 <img src="https://nowpayments.io/images/embeds/payment-button-black.svg" alt="Crypto payment button by NOWPayments">
             </a>
         </div>
         
         <div class="course">
-            <h2>P2 Course</h2>
+            <h2>Paypal Logs</h2>
             <p>Price: $80</p>
-            <button onclick="addToCart('P2 Course', 80)">Add to Cart</button>
             <a href="https://nowpayments.io/payment/?iid=6110280588&source=button" target="_blank" rel="noreferrer noopener">
                 <img src="https://nowpayments.io/images/embeds/payment-button-black.svg" alt="Crypto payment button by NOWPayments">
             </a>
         </div>
         
         <div class="course">
-            <h2>E3 Course</h2>
+            <h2>Enroll</h2>
             <p>Price: $150</p>
-            <button onclick="addToCart('E3 Course', 150)">Add to Cart</button>
             <a href="https://nowpayments.io/payment/?iid=5116156768&source=button" target="_blank" rel="noreferrer noopener">
                 <img src="https://nowpayments.io/images/embeds/payment-button-black.svg" alt="Crypto payment button by NOWPayments">
             </a>
         </div>
     </section>
-    
-    <div style="text-align: center; margin-top: 20px;">
-        <button onclick="checkout()">Proceed to Checkout</button>
-    </div>
-    
-    <script>
-        let cart = [];
-
-        function addToCart(courseName, price) {
-            cart.push({ name: courseName, price: price });
-            updateCart();
-        }
-
-        function updateCart() {
-            document.getElementById("cart-count").textContent = cart.length;
-        }
-
-        function toggleCart() {
-            let cartSummary = cart.map(item => `${item.name}: $${item.price}`).join("\n");
-            alert("Cart contains:\n" + cartSummary);
-        }
-
-        function checkout() {
-            if (cart.length === 0) {
-                alert("Your cart is empty!");
-                return;
-            }
-            window.location.href = "https://nowpayments.io/payment/?iid=6110280588&source=button";
-            setTimeout(() => {
-                window.location.href = "https://t.me/trendhiveacademy";
-            }, 3000);
-        }
-    </script>
 </body>
 </html>
