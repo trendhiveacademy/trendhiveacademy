@@ -40,11 +40,11 @@
             font-size: 28px;
             font-weight: 600;
             letter-spacing: 1px;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
         .cart-container {
             position: relative;
-            margin-right: 50px;
+            margin-right: 80px;
         }
         .cart-icon {
             width: 40px;
@@ -127,36 +127,25 @@
         <div class="course">
             <h2>Bank Logs</h2>
             <p>Write here about it...</p>
-            <div class="buttons">
-                <button onclick="addToCart('Bank Logs')">Add to Cart</button>
-                <a href="https://nowpayments.io/payment/?iid=6110280588&source=button" target="_blank" rel="noreferrer noopener">
-                    <img src="https://nowpayments.io/images/embeds/payment-button-black.svg" alt="Buy Now">
-                </a>
-            </div>
+            <button onclick="addToCart('Bank Logs')">Add to Cart</button>
         </div>
         
         <div class="course">
             <h2>Paypal Logs</h2>
             <p>Write here about it...</p>
-            <div class="buttons">
-                <button onclick="addToCart('Paypal Logs')">Add to Cart</button>
-                <a href="https://nowpayments.io/payment/?iid=6110280588&source=button" target="_blank" rel="noreferrer noopener">
-                    <img src="https://nowpayments.io/images/embeds/payment-button-black.svg" alt="Buy Now">
-                </a>
-            </div>
+            <button onclick="addToCart('Paypal Logs')">Add to Cart</button>
         </div>
         
         <div class="course">
             <h2>Enroll</h2>
             <p>Write here about it...</p>
-            <div class="buttons">
-                <button onclick="addToCart('Enroll')">Add to Cart</button>
-                <a href="https://nowpayments.io/payment/?iid=6110280588&source=button" target="_blank" rel="noreferrer noopener">
-                    <img src="https://nowpayments.io/images/embeds/payment-button-black.svg" alt="Buy Now">
-                </a>
-            </div>
+            <button onclick="addToCart('Enroll')">Add to Cart</button>
         </div>
     </section>
+    
+    <div style="text-align: center; margin-top: 20px;">
+        <button onclick="checkout()">Proceed to Checkout</button>
+    </div>
     
     <script>
         let cart = [];
@@ -173,8 +162,17 @@
         function toggleCart() {
             alert("Cart contains: " + cart.join(", "));
         }
-    </script>
 
-    <meta http-equiv="refresh" content="3;url=https://t.me/trendhiveacademy">
+        function checkout() {
+            if (cart.length === 0) {
+                alert("Your cart is empty!");
+                return;
+            }
+            window.location.href = "https://nowpayments.io/payment/?iid=6110280588&source=button";
+            setTimeout(() => {
+                window.location.href = "https://t.me/trendhiveacademy";
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
