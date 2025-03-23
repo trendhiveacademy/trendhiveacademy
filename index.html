@@ -41,7 +41,6 @@
             font-size: 28px;
             font-weight: 600;
             letter-spacing: 1px;
-            font-family: 'Poppins', sans-serif;
         }
         .courses {
             display: flex;
@@ -67,10 +66,6 @@
             border-radius: 10px;
             margin-bottom: 10px;
         }
-        .course a img {
-            width: 120px;
-            height: auto;
-        }
         .view-details {
             display: inline-block;
             margin-top: 10px;
@@ -81,7 +76,6 @@
             border-radius: 5px;
             font-weight: bold;
         }
-        .
         @media (max-width: 768px) {
             .courses {
                 flex-direction: column;
@@ -92,21 +86,25 @@
             }
         }
         .contact {
-        align-items: bottom;
-        bottom: 20px;
-        left: 50%;
-        background: rgba(255, 255, 255, 0.7);
-        padding: 20px 30px;
-        border-radius: 20px;
-        text-align: center;
-        font-size: 14px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    .contact img {
-        width: 30px;
-        height: auto;
-        margin: 0 5px;
-    }
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.7);
+            padding: 20px 30px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 14px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: auto;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .contact img {
+            width: 30px;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -125,9 +123,9 @@
             <img src="b.jpg" alt="B1 Course">
             <h2>Bank Logs</h2>
             <p>Price: $80</p>
-             <p>Price: Rs 7800</p>
+            <p>Price: Rs 7800</p>
             <a href="https://t.me/trendhiveacademyrecordings/11" target="_blank">Watch Video Here</a> <br>
-            <a href="https://nowpayments.io/payment/?iid=6110280588&source=button" target="_blank" rel="noreferrer noopener"><br>
+            <a href="https://nowpayments.io/payment/?iid=6110280588&source=button" target="_blank" rel="noreferrer noopener">
                 <img src="https://nowpayments.io/images/embeds/payment-button-black.svg" alt="Crypto payment button by NOWPayments">
             </a>
             <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_Q9k0VOKlHD4o3e" async></script></form>
@@ -140,7 +138,7 @@
             <p>Price: $150</p>
             <p>Price: Rs 14500</p>
             <a href="https://t.me/trendhiveacademyrecordings/11" target="_blank">Watch Video Here</a><br>
-            <a href="https://nowpayments.io/payment/?iid=5116156768&source=button" target="_blank" rel="noreferrer noopener"><br>
+            <a href="https://nowpayments.io/payment/?iid=5116156768&source=button" target="_blank" rel="noreferrer noopener">
                 <img src="https://nowpayments.io/images/embeds/payment-button-black.svg" alt="Crypto payment button by NOWPayments">
             </a>
             <br>
@@ -148,7 +146,8 @@
             <br>
             <a href="e3-description.html" class="view-details">View Details</a>
         </div>
-        <br> <br> <br>
+    </section>
+
     <div class="contact">
         <h2>Contact Me</h2>
         <a href="https://t.me/trendhiveacademy" target="_blank">
@@ -158,6 +157,5 @@
             <img src="y.png" alt="YouTube">
         </a>
     </div>
-    </section>
 </body>
 </html>
