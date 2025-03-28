@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment</title>
     <style>
-        body {
+        body 
+        
+        <!-- {
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 20px;
@@ -40,7 +42,73 @@
             font-size: 30px;
             font-weight: bold;
             color: red;
-        }
+        } -->
+
+        body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+    color: black;
+}
+
+.payment-container {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 50px;
+    max-width: 90%;
+    width: 500px;
+}
+
+.payment-section {
+    margin-bottom: 30px;
+}
+
+/* Video Background */
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Make the QR link larger */
+a[href="qr.png"] {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) { /* For tablets and smaller screens */
+    .payment-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    a[href="qr.png"] {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) { /* For mobile phones */
+    .payment-container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    a[href="qr.png"] {
+        font-size: 16px;
+    }
+
+    .disclaimer {
+        font-size: 12px;
+    }
+}
+
     </style>
 </head>
 <body>
