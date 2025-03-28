@@ -9,12 +9,17 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 20px;
-            color: white;
+            color: black;
+        }
+        .payment-container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 50px;
         }
         .payment-section {
             margin-bottom: 30px;
-            position: relative;
-            z-index: 1;
         }
         img {
             width: 150px;
@@ -38,29 +43,30 @@
         Your browser does not support the video tag.
     </video>
     
-    <h2>Crypto Payment</h2>
+    <div class="payment-container">
+        <h2>Crypto Payment</h2>
+        
+        <div class="payment-section">
+            <h3>USDT (TRC20)</h3>
+            <p>Address: TPN6kehQsZwdCHt4HYyURRPdhmCUw2s1iB</p>
+        </div>
     
-    <div class="payment-section">
-        <h3>USDT (TRC20)</h3>
-        <p>Address: TPN6kehQsZwdCHt4HYyURRPdhmCUw2s1iB</p>
-    </div>
-
-    <div class="payment-section">
-        <h3>USDT (BSC) BEP20</h3>
-        <p>Address: 0xaf3361314ff2f9f591c816a1ff453acd50e13660</p>
-    </div>
-
-    <div class="payment-section">
-        <h3>BTC (BTC)</h3>
-        <p>Address: 1H5y7apiCdDg6ydFnePaMB3umRVxTWazw1</p>
-    </div>
+        <div class="payment-section">
+            <h3>USDT (BSC) BEP20</h3>
+            <p>Address: 0xaf3361314ff2f9f591c816a1ff453acd50e13660</p>
+        </div>
     
-    <h2>UPI Payment</h2>
-    <div class="payment-section">
-        <h3>Scan & Pay via UPI</h3>
-        <p>UPI ID: <strong>raj.n@fam</strong></p>
-       
+        <div class="payment-section">
+            <h3>BTC (BTC)</h3>
+            <p>Address: 1H5y7apiCdDg6ydFnePaMB3umRVxTWazw1</p>
+        </div>
+        
+        <h2>UPI Payment</h2>
+        <div class="payment-section">
+            <h3>Scan & Pay via UPI</h3>
+            <p>UPI ID: <strong>raj.n@fam</strong></p>
+            <img src="qr.png" alt="UPI QR" style="width: 250px; height: 250px;">
+        </div>
     </div>
- <img src="qr.png" alt="UPI QR">
 </body>
 </html>
