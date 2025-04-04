@@ -174,9 +174,15 @@
     <script>
         function closePopup() {
             document.getElementById('popup').style.display = 'none';
+            localStorage.setItem('popupShown', new Date().toDateString());
         }
+        
+        window.onload = function() {
+            if (localStorage.getItem('popupShown') === new Date().toDateString()) {
+                document.getElementById('popup').style.display = 'none';
+            }
+        };
     </script>
-  
     <section class="courses">
         <div class="course">
             <img src="b.jpg" alt="B1 Course">
