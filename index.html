@@ -103,7 +103,7 @@
             height: auto;
         }
        
-            {
+           {
             font-family: Arial, sans-serif;
         }
         .popup {
@@ -116,6 +116,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            z-index: 9999; /* Ensures popup stays on top */
         }
         .popup-content {
             background: white;
@@ -123,6 +124,8 @@
             border-radius: 10px;
             text-align: center;
             max-width: 400px;
+            position: relative;
+            z-index: 10000;
         }
         .popup-content h2 {
             color: red;
@@ -135,6 +138,9 @@
             color: white;
             cursor: pointer;
             border-radius: 5px;
+        }
+        #razorpay-button {
+            display: none; /* Hide Razorpay button initially */
         }
          @media (max-width: 768px) {
             .courses {
@@ -162,19 +168,22 @@
         <h1 class="site-title">Trend’s 🔮 Sphere</h1>
     </header>
 
-    <div class="popup" id="popup">
+   <div class="popup" id="popup">
         <div class="popup-content">
             <h2>Read It Carefully</h2>
             <p>If you buy my course, it is not my liability or guarantee that you will succeed in carding. As anti-fraud systems upgrade, bypassing them is becoming harder. If you still want to buy it, proceed at your own risk.</p>
             <button onclick="closePopup()">I Understand</button>
         </div>
     </div>
+    
+    <button id="razorpay-button">Buy Now</button> <!-- Razorpay button -->
+    
     <script>
         function closePopup() {
             document.getElementById('popup').style.display = 'none';
+            document.getElementById('razorpay-button').style.display = 'block'; // Show Razorpay button after closing popup
         }
-    </script>
-    
+   
     <section class="courses">
         <div class="course">
             <img src="b.jpg" alt="B1 Course">
