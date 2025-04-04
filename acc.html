@@ -131,24 +131,18 @@
         <h1 class="site-title">Trend’s 🔮 Sphere</h1>
     </header>
 
-    <div class="popup" id="popup">
+    <div class="popup" id="disclaimerPopup">
         <div class="popup-content">
-            <h2>Read It Carefully</h2>
-            <p>If you buy my course, it is not my liability or guarantee that you will succeed in carding. As anti-fraud systems upgrade, bypassing them is becoming harder. If you still want to buy it, proceed at your own risk.</p>
+            <h2>⚠️ Read It Carefully ⚠️</h2>
+            <p>If you buy my course, it's not my liability or guarantee that you will succeed in carding. As anti-fraud systems keep upgrading, bypassing them is becoming harder. If you still want to buy, proceed at your own risk.</p>
             <button onclick="closePopup()">I Understand</button>
         </div>
     </div>
+    
     <script>
         function closePopup() {
-            document.getElementById('popup').style.display = 'none';
-            localStorage.setItem('popupShown', new Date().toDateString());
+            document.getElementById("disclaimerPopup").style.display = "none";
         }
-        
-        window.onload = function() {
-            if (localStorage.getItem('popupShown') === new Date().toDateString()) {
-                document.getElementById('popup').style.display = 'none';
-            }
-        };
     </script>
     
     <section class="description">
