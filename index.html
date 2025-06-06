@@ -8,6 +8,10 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
         
+        :root {
+            --glow-color: hsl(270, 95%, 65%); /* Purple glow color for the border */
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -37,11 +41,10 @@
             padding: 20px;
             background: rgba(0, 0, 0, 0.6);
             width: 100%;
-            /* Added Animation */
             animation: slideDown 1s ease-in-out;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Keyframe animation for the header */
         @keyframes slideDown {
             from {
                 transform: translateY(-100%);
@@ -67,7 +70,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 25px; /* Increased gap for better spacing */
+            gap: 30px; 
             margin: 50px auto;
             padding: 20px;
             max-width: 1200px;
@@ -75,74 +78,115 @@
         }
 
         .course {
-            background: rgba(255, 255, 255, 0.9);
+            /* --- ✨ Frosted Glass & Border Animation Added --- */
+            background: rgba(35, 35, 45, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* For Safari */
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative; /* Needed for the animated border */
+            
             padding: 20px;
-            border-radius: 15px; /* Slightly more rounded */
+            border-radius: 15px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             width: 90%;
-            max-width: 310px; /* Slightly larger max-width */
+            max-width: 310px; 
             display: flex;
-            flex-direction: column; /* For footer alignment */
-            justify-content: space-between; /* Pushes buttons down */
+            flex-direction: column; 
+            justify-content: space-between;
             
-            /* --- Animation Added --- */
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
-        /* --- Hover Animation for Courses --- */
-        .course:hover {
-            transform: translateY(-12px); /* Lifts the card up */
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Deeper shadow for 3D effect */
+
+        /* --- 🌈 Animated Gradient Border on Hover --- */
+        .course::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 15px;
+            border: 2px solid transparent;
+            background: conic-gradient(from 180deg at 50% 50%, #E233FF 0deg, #FF95F3 120deg, #8925A2 240deg, #E233FF 360deg);
+            background-size: 200% 200%;
+            animation: moveGradient 3s linear infinite;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
         }
 
+        @keyframes moveGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .course:hover::before {
+            opacity: 1;
+        }
+        
         .course img {
             width: 70%;
             height: auto;
             border-radius: 10px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            
+            /* --- ✅ Image Centering Fix --- */
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .course h2 {
-            font-size: 1.1rem; /* Responsive font size */
+            font-size: 1.1rem;
             margin-bottom: 15px;
         }
         
         .course p {
-            flex-grow: 1; /* Allows paragraphs to take available space */
+            flex-grow: 1; 
+            font-size: 0.95rem;
+            color: #eee;
+        }
+        
+        .course a {
+            color: #f0f0f0; /* Lighter link color for better contrast */
         }
 
         .view-details {
             display: inline-block;
             margin-top: 10px;
-            padding: 12px 18px; /* Slightly larger padding */
-            background: #000;
+            padding: 12px 18px; 
+            background: linear-gradient(45deg, #8e2de2, #4a00e0); /* Gradient background */
             color: white;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            border: 2px solid transparent;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 
-            /* --- Animation Added --- */
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-
-        /* --- Hover and Active Animations for Buttons --- */
+        
         .view-details:hover {
-            background: #4a00e0; /* Vibrant color on hover */
-            transform: scale(1.05); /* Slightly enlarges button */
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 6px 20px rgba(142, 45, 226, 0.5); /* Shadow color matches gradient */
         }
 
         .view-details:active {
-            transform: scale(0.95); /* Button press effect */
+            transform: scale(0.95);
         }
 
         .contact {
             text-align: center;
             margin: 50px auto;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(35, 35, 45, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             width: 80%;
             max-width: 500px;
         }
@@ -150,24 +194,22 @@
         .contact h2 {
             font-size: 24px;
             margin-bottom: 15px;
-            color: black;
+            color: white;
         }
 
         .contact a {
             display: inline-block;
-            margin: 0 15px; /* Increased margin */
+            margin: 0 15px; 
         }
 
         .contact img {
-            width: 40px; /* Slightly larger icons */
+            width: 40px; 
             height: auto;
-            /* --- Animation Added --- */
             transition: transform 0.3s ease;
         }
         
-        /* --- Hover Animation for Contact Icons --- */
         .contact img:hover {
-            transform: scale(1.2) rotate(10deg); /* Scales and slightly rotates icon */
+            transform: scale(1.2) rotate(10deg);
         }
         
         @media (max-width: 768px) {
@@ -191,7 +233,7 @@
     
 
     <section class="courses">
-        <div class="course" data-aos="fade-up">
+        <div class="course" data-aos="zoom-in" data-tilt>
             <img src="28days.png" alt="🔥 28 DAYS TO MASTER THE UNSPOKEN INTERNET 💰📲 Course">
             <h2>🔥 28 DAYS TO MASTER THE UNSPOKEN INTERNET 💰📲</h2>
             <p>Price: Choose according to plans<br>(Basic - 20$ / Standard - 30$ / Premium - 40$)</p>
@@ -200,7 +242,7 @@
                 <a href="28days.html" class="view-details">View Details</a>
             </div>
         </div>
-        <div class="course" data-aos="fade-up" data-aos-delay="100">
+        <div class="course" data-aos="zoom-in-up" data-aos-delay="100" data-tilt>
             <img src="e.jpg" alt="E3 Course">
             <h2>Enroll</h2>
             <p>Price: $55 | Rs 5500 (Starting Price)</p>
@@ -214,7 +256,7 @@
                 <a href="e3-description.html" class="view-details">View Details</a>
             </div>
         </div>
-        <div class="course" data-aos="fade-up" data-aos-delay="200">
+        <div class="course" data-aos="zoom-in-down" data-aos-delay="200" data-tilt>
             <img src="ttp.jpg" alt="B1 Course">
             <h2>🔐 Track1 + Track2 + PIN</h2>
             <p>Price: $80 | Rs 8000</p>
@@ -223,7 +265,7 @@
                 <a href="ttp.html" class="view-details">View Details</a>
             </div>
         </div>
-        <div class="course" data-aos="fade-up" data-aos-delay="100">
+        <div class="course" data-aos="flip-left" data-aos-delay="100" data-tilt>
             <img src="ttwp.jpg" alt="B1 Course">
             <h2>🔐 Track1 + Track2 + Without PIN</h2>
             <p>Price: $50 | Rs 5000</p>
@@ -232,7 +274,7 @@
                 <a href="ttwp.html" class="view-details">View Details</a>
             </div>
         </div>
-        <div class="course" data-aos="fade-up" data-aos-delay="200">
+        <div class="course" data-aos="flip-right" data-aos-delay="200" data-tilt>
             <img src="b.jpg" alt="B1 Course">
             <h2>🔥 Enroll Explained: Types, Usage & Best Cashout Methods! 💰📲</h2>
             <p>Price: $30 | Rs 3000</p>
@@ -241,7 +283,7 @@
                 <a href="b1-description.html" class="view-details">View Details</a>
             </div>
         </div>
-        <div class="course" data-aos="fade-up" data-aos-delay="100">
+        <div class="course" data-aos="fade-up-right" data-aos-delay="100" data-tilt>
             <img src="banklogs.jpg" alt="Course 3">
             <h2>Bank Logs</h2>
             <p>Price: $100 | Rs 10000 (Starting Price)</p>
@@ -255,7 +297,7 @@
                 <a href="bl.html" class="view-details">View Details</a>
             </div>
         </div>
-        <div class="course" data-aos="fade-up" data-aos-delay="200">
+        <div class="course" data-aos="fade-up-left" data-aos-delay="200" data-tilt>
             <img src="c1.jpg" alt="Course 3">
             <h2>Advance Carding Course</h2>
             <p>Price: $50 (English Language)| Rs 2000/20$ (Hindi Language)</p>
@@ -264,7 +306,7 @@
                 <a href="acc.html" class="view-details">View Details</a>
             </div>
         </div>
-        <div class="course" data-aos="fade-up" data-aos-delay="100">
+        <div class="course" data-aos="zoom-out-up" data-aos-delay="100" data-tilt>
             <img src="proxy.jpg" alt="Binning Course">
             <h2>🛡️ 1GB Proxy – ⚡ Best Quality, 🔥 Low Fraud Score!</h2>
             <p>Price: $10 | Rs 1000</p> 
@@ -273,7 +315,7 @@
                 <a href="proxy.html" class="view-details">View Details</a>
             </div>
         </div>
-        <div class="course" data-aos="fade-up" data-aos-delay="200">
+        <div class="course" data-aos="zoom-out-down" data-aos-delay="200" data-tilt>
             <img src="c2.jpg" alt="Binning Course">
             <h2>Binning Course</h2>
             <p>Price: $10 | Rs 200</p> 
@@ -282,7 +324,7 @@
                 <a href="c2.html" class="view-details">View Details</a>
             </div>
         </div>
-        <div class="course" data-aos="fade-up" data-aos-delay="100">
+        <div class="course" data-aos="fade-down-right" data-aos-delay="100" data-tilt>
             <img src="c3.jpg" alt="Course 5">
             <h2>Basic Hacking Course<br>(From Mobiles)</h2>
             <p>Price: $5 | Rs 500</p>
@@ -292,7 +334,7 @@
                 <a href="c3.html" class="view-details">View Details</a>
             </div>
         </div>
-        <div class="course" data-aos="fade-up" data-aos-delay="200">
+        <div class="course" data-aos="fade-down-left" data-aos-delay="200" data-tilt>
             <img src="meeting.jpg" alt="Book Meeting">
             <h2>Talk to Trend Hive (Book Meeting)</h2>
             <p>Price: $2 | Rs 200</p> <br>
@@ -302,7 +344,7 @@
                 <a href="meeting.html" class="view-details">Learn More</a>
             </div>
         </div>
-        <div class="course" data-aos="fade-up" data-aos-delay="100">
+        <div class="course" data-aos="flip-up" data-aos-delay="100" data-tilt>
             <img src="cc.jpg" alt="CC Dumps">
             <h2>CC Dumps(10 CCs)</h2>
             <p>Price: $60 | Rs 6000</p> <br>
@@ -311,7 +353,7 @@
                 <a href="ccdumps.html" class="view-details">Learn More</a>
             </div>
         </div>
-        <div class="course" data-aos="fade-up" data-aos-delay="200">
+        <div class="course" data-aos="flip-down" data-aos-delay="200" data-tilt>
             <img src="c4.jpeg" alt="Cx">
             <h2>How to make your own smm panel</h2>
             <p>Price: $1 | Rs 100</p><br>
@@ -320,7 +362,7 @@
                 <a href="htmyosp.html" class="view-details">Learn More</a>
             </div>
         </div>
-        <div class="course" data-aos="fade-up" data-aos-delay="100">
+        <div class="course" data-aos="zoom-in" data-aos-delay="100" data-tilt>
             <img src="c5.jpeg" alt="CC Dumps">
             <h2>Dark Web Course</h2>
             <p>Price: $5 | Rs 500</p><br>
@@ -331,7 +373,7 @@
         </div>
     </section>
     
-    <section class="contact" data-aos="zoom-in">
+    <section class="contact" data-aos="zoom-in-up">
         <h2>Contact Me</h2>
         <a href="https://t.me/trendhiveacademy" target="_blank">
             <img src="t.png" alt="Telegram">
@@ -345,9 +387,20 @@
     <script>
         // Initialize AOS
         AOS.init({
-            duration: 800, // Animation duration in milliseconds
-            once: true, // Whether animation should happen only once
-            offset: 50, // Offset (in px) from the original trigger point
+            duration: 800, 
+            once: true, 
+            offset: 50,
+        });
+    </script>
+    
+    <script type="text/javascript" src="https://unpkg.com/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+    <script type="text/javascript">
+        // Initialize Vanilla Tilt on all elements with data-tilt
+        VanillaTilt.init(document.querySelectorAll("[data-tilt]"), {
+            max: 15, // Max tilt rotation (degrees)
+            speed: 400, // Speed of the enter/exit transition
+            glare: true, // If it should have a glare effect
+            "max-glare": 0.5 // Glare intensity
         });
     </script>
 </body>
