@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trend’s 🔮 Sphere - RDP Services</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles not easily achievable with Tailwind or for overrides */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.7);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-100">
+    <!-- Background Video -->
+    <video autoplay muted loop class="video-bg">
+        <source src="y.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Header Section -->
+    <header class="flex flex-col md:flex-row justify-center items-center text-white py-5 px-4 bg-black bg-opacity-60 w-full shadow-lg">
+        <img src="https://placehold.co/150x50/000/FFF?text=THA+Logo" alt="Logo" class="w-36 h-auto mb-4 md:mb-0 md:mr-20 rounded-lg">
+        <h1 class="text-3xl md:text-4xl font-semibold tracking-wide font-poppins">Trend’s 🔮 Sphere</h1>
+    </header>
+
+    <!-- Main Content Section - RDP Services Description -->
+    <section class="bg-white bg-opacity-90 p-8 md:p-10 rounded-xl max-w-4xl mx-auto my-16 text-center shadow-xl">
+        <h2 class="text-3xl md:text-4xl font-semibold mb-6 text-gray-900">RDP Services</h2>
+
+        <!-- Locations Available -->
+        <div class="mb-8 text-left">
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">Locations Available 🌍</h3>
+            <ul class="list-disc list-inside text-lg text-gray-700 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <li>Amsterdam | Netherlands</li>
+                <li>United States | Miami</li>
+                <li>Warsaw | Poland</li>
+            </ul>
+        </div>
+
+        <!-- Operating Systems Available -->
+        <div class="mb-10 text-left">
+            <h3 class="text-2xl font-semibold mb-4 text-gray-800">Operating Systems Available 💻</h3>
+            <ul class="list-disc list-inside text-lg text-gray-700 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+                <li>Windows Server 2022</li>
+                <li>Windows Server 2025</li>
+                <li>Debian 10</li>
+                <li>Ubuntu 22.10</li>
+                <li>Ubuntu 23.04</li>
+                <li>Debian 12</li>
+                <li>Ubuntu 24.04</li>
+                <li>Debian 11</li>
+                <li>CentOS 10 Stream</li>
+                <li>RockyLinux 9</li>
+                <li>Fedora 42</li>
+                <li>Ubuntu 25.04</li>
+                <li>AlmaLinux 9</li>
+            </ul>
+        </div>
+
+        <!-- RDP Packages Section -->
+        <h3 class="text-3xl font-semibold mb-8 text-gray-900">Our RDP Packages 🚀</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- RDP-Regular Card -->
+            <div class="bg-gradient-to-br from-blue-500 to-blue-700 text-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out flex flex-col justify-between">
+                <h4 class="text-2xl font-bold mb-3">RDP-Regular</h4>
+                <p class="text-lg mb-2"><strong>vCPU:</strong> 2 Cores</p>
+                <p class="text-lg mb-2"><strong>RAM:</strong> 6 GB</p>
+                <p class="text-lg mb-2"><strong>Disk:</strong> 40 GB</p>
+                <p class="text-lg mb-4"><strong>Bandwidth:</strong> Unlimited</p>
+                <div class="mt-auto">
+                    <p class="text-3xl font-extrabold">$25<span class="text-xl font-normal">/month</span></p>
+                    <button class="mt-4 w-full bg-white text-blue-700 py-3 rounded-lg font-bold hover:bg-blue-100 transition-colors duration-200 shadow-md">Order Now</button>
+                </div>
+            </div>
+
+            <!-- RDP-Business Card -->
+            <div class="bg-gradient-to-br from-purple-500 to-purple-700 text-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out flex flex-col justify-between">
+                <h4 class="text-2xl font-bold mb-3">RDP-Business</h4>
+                <p class="text-lg mb-2"><strong>vCPU:</strong> 4 Cores</p>
+                <p class="text-lg mb-2"><strong>RAM:</strong> 8 GB</p>
+                <p class="text-lg mb-2"><strong>Disk:</strong> 60 GB</p>
+                <p class="text-lg mb-4"><strong>Bandwidth:</strong> Unlimited</p>
+                <div class="mt-auto">
+                    <p class="text-3xl font-extrabold">$40<span class="text-xl font-normal">/month</span></p>
+                    <button class="mt-4 w-full bg-white text-purple-700 py-3 rounded-lg font-bold hover:bg-purple-100 transition-colors duration-200 shadow-md">Order Now</button>
+                </div>
+            </div>
+
+            <!-- RDP-Premium Card -->
+            <div class="bg-gradient-to-br from-green-500 to-green-700 text-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out flex flex-col justify-between">
+                <h4 class="text-2xl font-bold mb-3">RDP-Premium</h4>
+                <p class="text-lg mb-2"><strong>vCPU:</strong> 8 Cores</p>
+                <p class="text-lg mb-2"><strong>RAM:</strong> 12 GB</p>
+                <p class="text-lg mb-2"><strong>Disk:</strong> 80 GB</p>
+                <p class="text-lg mb-4"><strong>Bandwidth:</strong> Unlimited</p>
+                <div class="mt-auto">
+                    <p class="text-3xl font-extrabold">$60<span class="text-xl font-normal">/month</span></p>
+                    <button class="mt-4 w-full bg-white text-green-700 py-3 rounded-lg font-bold hover:bg-green-100 transition-colors duration-200 shadow-md">Order Now</button>
+                </div>
+            </div>
+
+            <!-- RDP-Enterprise Card -->
+            <div class="bg-gradient-to-br from-red-500 to-red-700 text-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out flex flex-col justify-between">
+                <h4 class="text-2xl font-bold mb-3">RDP-Enterprise</h4>
+                <p class="text-lg mb-2"><strong>vCPU:</strong> 10 Cores</p>
+                <p class="text-lg mb-2"><strong>RAM:</strong> 12 GB</p>
+                <p class="text-lg mb-2"><strong>Disk:</strong> 140 GB</p>
+                <p class="text-lg mb-4"><strong>Bandwidth:</strong> Unlimited</p>
+                <div class="mt-auto">
+                    <p class="text-3xl font-extrabold">$90<span class="text-xl font-normal">/month</span></p>
+                    <button class="mt-4 w-full bg-white text-red-700 py-3 rounded-lg font-bold hover:bg-red-100 transition-colors duration-200 shadow-md">Order Now</button>
+                </div>
+            </div>
+
+            <!-- RDP-Endgame Card -->
+            <div class="bg-gradient-to-br from-yellow-500 to-yellow-700 text-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out flex flex-col justify-between">
+                <h4 class="text-2xl font-bold mb-3">RDP-Endgame</h4>
+                <p class="text-lg mb-2"><strong>vCPU:</strong> 10 Cores</p>
+                <p class="text-lg mb-2"><strong>RAM:</strong> 36 GB</p>
+                <p class="text-lg mb-2"><strong>Disk:</strong> 140 GB</p>
+                <p class="text-lg mb-4"><strong>Bandwidth:</strong> Unlimited</p>
+                <div class="mt-auto">
+                    <p class="text-3xl font-extrabold">$120<span class="text-xl font-normal">/month</span></p>
+                    <button class="mt-4 w-full bg-white text-yellow-700 py-3 rounded-lg font-bold hover:bg-yellow-100 transition-colors duration-200 shadow-md">Order Now</button>
+                </div>
+            </div>
+
+            <!-- Linux-20-1C-2M Card -->
+            <div class="bg-gradient-to-br from-gray-600 to-gray-800 text-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out flex flex-col justify-between">
+                <h4 class="text-2xl font-bold mb-3">Linux-20-1C-2M</h4>
+                <p class="text-lg mb-2"><strong>vCPU:</strong> 1 Core</p>
+                <p class="text-lg mb-2"><strong>RAM:</strong> 2 GB</p>
+                <p class="text-lg mb-2"><strong>Disk:</strong> 20 GB</p>
+                <p class="text-lg mb-4"><strong>Bandwidth:</strong> Unlimited</p>
+                <div class="mt-auto">
+                    <p class="text-3xl font-extrabold">$15<span class="text-xl font-normal">/month</span></p>
+                    <button class="mt-4 w-full bg-white text-gray-800 py-3 rounded-lg font-bold hover:bg-gray-200 transition-colors duration-200 shadow-md">Order Now</button>
+                </div>
+            </div>
+
+            <!-- Linux-40-6C-4M Card -->
+            <div class="bg-gradient-to-br from-teal-500 to-teal-700 text-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out flex flex-col justify-between">
+                <h4 class="text-2xl font-bold mb-3">Linux-40-6C-4M</h4>
+                <p class="text-lg mb-2"><strong>vCPU:</strong> 2 Cores</p>
+                <p class="text-lg mb-2"><strong>RAM:</strong> 6 GB</p>
+                <p class="text-lg mb-2"><strong>Disk:</strong> 40 GB</p>
+                <p class="text-lg mb-4"><strong>Bandwidth:</strong> Unlimited</p>
+                <div class="mt-auto">
+                    <p class="text-3xl font-extrabold">$25<span class="text-xl font-normal">/month</span></p>
+                    <button class="mt-4 w-full bg-white text-teal-700 py-3 rounded-lg font-bold hover:bg-teal-100 transition-colors duration-200 shadow-md">Order Now</button>
+                </div>
+            </div>
+
+            <!-- Linux-40-6C-10M Card -->
+            <div class="bg-gradient-to-br from-indigo-500 to-indigo-700 text-white p-6 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300 ease-in-out flex flex-col justify-between">
+                <h4 class="text-2xl font-bold mb-3">Linux-40-6C-10M</h4>
+                <p class="text-lg mb-2"><strong>vCPU:</strong> 6 Cores</p>
+                <p class="text-lg mb-2"><strong>RAM:</strong> 10 GB</p>
+                <p class="text-lg mb-2"><strong>Disk:</strong> 40 GB</p>
+                <p class="text-lg mb-4"><strong>Bandwidth:</strong> Unlimited</p>
+                <div class="mt-auto">
+                    <p class="text-3xl font-extrabold">$40<span class="text-xl font-normal">/month</span></p>
+                    <button class="mt-4 w-full bg-white text-indigo-700 py-3 rounded-lg font-bold hover:bg-indigo-100 transition-colors duration-200 shadow-md">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="text-center my-16 p-8 bg-white bg-opacity-90 rounded-xl w-11/12 max-w-xl mx-auto shadow-xl">
+        <h2 class="text-3xl font-semibold mb-6 text-gray-900">Contact Me 📞</h2>
+        <div class="flex justify-center space-x-8">
+            <a href="https://t.me/trendhiveacademy" target="_blank" class="transform hover:scale-110 transition-transform duration-200">
+                <img src="https://placehold.co/60x60/007ACC/FFF?text=Telegram" alt="Telegram" class="w-16 h-auto rounded-full shadow-md">
+            </a>
+            <a href="https://www.youtube.com/@TrendHiveAcademy" target="_blank" class="transform hover:scale-110 transition-transform duration-200">
+                <img src="https://placehold.co/60x60/FF0000/FFF?text=YouTube" alt="YouTube" class="w-16 h-auto rounded-full shadow-md">
+            </a>
+        </div>
+    </section>
+</body>
+</html>
